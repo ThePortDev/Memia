@@ -20,6 +20,8 @@
 		00CD8487291B045B0065653B /* PepePowerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD8486291B045B0065653B /* PepePowerViewModel.swift */; };
 		00CD8489291B05730065653B /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD8488291B05730065653B /* Question.swift */; };
 		00CD848B291B0B6D0065653B /* MultipleChoiceQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD848A291B0B6D0065653B /* MultipleChoiceQuiz.swift */; };
+		00D545AF291EC667006191BD /* TwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D545AE291EC667006191BD /* TwitchView.swift */; };
+		00D545B1291EC968006191BD /* RedditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D545B0291EC968006191BD /* RedditView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		00CD8486291B045B0065653B /* PepePowerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PepePowerViewModel.swift; sourceTree = "<group>"; };
 		00CD8488291B05730065653B /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		00CD848A291B0B6D0065653B /* MultipleChoiceQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiceQuiz.swift; sourceTree = "<group>"; };
+		00D545AE291EC667006191BD /* TwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitchView.swift; sourceTree = "<group>"; };
+		00D545B0291EC968006191BD /* RedditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				00CD846E291B02530065653B /* TriviaGameView.swift */,
+				00D545AE291EC667006191BD /* TwitchView.swift */,
+				00D545B0291EC968006191BD /* RedditView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -197,6 +203,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				00CD846F291B02530065653B /* TriviaGameView.swift in Sources */,
+				00D545AF291EC667006191BD /* TwitchView.swift in Sources */,
+				00D545B1291EC968006191BD /* RedditView.swift in Sources */,
 				00CD8489291B05730065653B /* Question.swift in Sources */,
 				00CD8484291B03960065653B /* PepePowerModel.swift in Sources */,
 				00C1CDE5291C728F000072FD /* ShapePlusStyle.swift in Sources */,
