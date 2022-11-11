@@ -18,9 +18,14 @@ struct AcronymView: View {
     
     var body: some View {
         VStack {
+            Spacer()
             title
+                .frame(alignment: .top)
+            Spacer()
             question
+            Spacer()
             responseField
+            Spacer()
         }
         .alert(alertInfo.title, isPresented: $alertInfo.isShowing) {
             Button("Continue") {
@@ -58,24 +63,26 @@ struct AcronymView: View {
     }
     var responseField: some View {
         HStack {
-            TextField("Answer:", text: $response)
-            Button {
-                if viewModel.checkAnswer(response: response.lowercased()) {
-                    alertInfo.title = "That's correct!"
-                    alertInfo.message = "You answered: \(response)"
-                    alertInfo.isShowing = true
-                    response = ""
-                    
-                } else {
-                    alertInfo.title = "Not Quite!"
-                    alertInfo.message = "The correct answer was: \(viewModel.getAnswer())"
-                    alertInfo.isShowing = true
-                    response = ""
+            VStack {
+                TextField("Answer:", text: $response)
+                Button {
+                    if viewModel.checkAnswer(response: response.lowercased()) {
+                        alertInfo.title = "That's correct!"
+                        alertInfo.message = "You answered: \(response)"
+                        alertInfo.isShowing = true
+                        response = ""
+                        
+                    } else {
+                        alertInfo.title = "Not Quite!"
+                        alertInfo.message = "The correct answer was: \(viewModel.getAnswer())"
+                        alertInfo.isShowing = true
+                        response = ""
+                    }
+                } label: {
+                    Text("Check Answer")
                 }
-            } label: {
-                Text("Check Answer")
             }
-        }
+        } .padding(.horizontal)
     }
 }
 

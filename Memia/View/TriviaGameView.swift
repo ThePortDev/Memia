@@ -41,7 +41,7 @@ struct TriviaGameView: View {
                         )
                 }
             }
-        }
+        }.accentColor(.black)
     }
 }
 
