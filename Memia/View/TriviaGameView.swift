@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import HydraSwiftExtensions
 
 struct TriviaGameView: View {
     
@@ -27,7 +28,7 @@ struct TriviaGameView: View {
     
     var twitchTestView: some View {
         ZStack {
-            LinearGradient(colors: [.indigo, .indigo, .indigo, .mint], startPoint: .leading, endPoint: .trailing)
+            LinearGradient(colors: [.indigo, .indigo, .mint, .mint], startPoint: .leading, endPoint: .trailing)
                 .ignoresSafeArea()
             VStack(spacing: 15) {
                 question
@@ -100,7 +101,7 @@ struct TriviaGameView: View {
             .multilineTextAlignment(.center)
             .padding()
             .background(RoundedRectangle(cornerRadius: 25)
-                .style(strokeColor: LinearGradient(colors: [.black, .purple, .black], startPoint: .leading, endPoint: .trailing), strokeWidth: 4, fill:  LinearGradient(colors: [.blue, .cyan, .blue], startPoint: .leading, endPoint: .trailing)))
+				.style(strokeColor: LinearGradient(colors: [.mint, .indigo], startPoint: .leading, endPoint: .trailing), strokeWidth: 4, fill:  LinearGradient(colors: [ Color("FFFFFF"), .white, .mint ], startPoint: .leading, endPoint: .trailing)))
             .padding(.horizontal)
             .foregroundColor(.black)
         
