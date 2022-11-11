@@ -22,6 +22,7 @@
 		00CD848B291B0B6D0065653B /* MultipleChoiceQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD848A291B0B6D0065653B /* MultipleChoiceQuiz.swift */; };
 		00D545AF291EC667006191BD /* TwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D545AE291EC667006191BD /* TwitchView.swift */; };
 		00D545B1291EC968006191BD /* RedditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D545B0291EC968006191BD /* RedditView.swift */; };
+		90B1EEC0291EFFAA00D7AF1E /* HydraSwiftExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 90B1EEBF291EFFAA00D7AF1E /* HydraSwiftExtensions */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90B1EEC0291EFFAA00D7AF1E /* HydraSwiftExtensions in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +150,9 @@
 			dependencies = (
 			);
 			name = Memia;
+			packageProductDependencies = (
+				90B1EEBF291EFFAA00D7AF1E /* HydraSwiftExtensions */,
+			);
 			productName = Memia;
 			productReference = 00CD8469291B02530065653B /* Memia.app */;
 			productType = "com.apple.product-type.application";
@@ -176,6 +181,9 @@
 				Base,
 			);
 			mainGroup = 00CD8460291B02530065653B;
+			packageReferences = (
+				90B1EEBE291EFFAA00D7AF1E /* XCRemoteSwiftPackageReference "HydraSwiftExtensions" */,
+			);
 			productRefGroup = 00CD846A291B02530065653B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -415,6 +423,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		90B1EEBE291EFFAA00D7AF1E /* XCRemoteSwiftPackageReference "HydraSwiftExtensions" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Hydra-Design/HydraSwiftExtensions";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		90B1EEBF291EFFAA00D7AF1E /* HydraSwiftExtensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90B1EEBE291EFFAA00D7AF1E /* XCRemoteSwiftPackageReference "HydraSwiftExtensions" */;
+			productName = HydraSwiftExtensions;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 00CD8461291B02530065653B /* Project object */;
 }

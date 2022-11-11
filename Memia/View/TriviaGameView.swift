@@ -21,7 +21,7 @@ struct TriviaGameView: View {
                                 .style(strokeColor: .black, strokeWidth: 3, fill: .white)
                         )
                 }
-                .navigationTitle("Pick A Quiz!")
+				.navigationTitle("Pick A Quiz!")
                 NavigationLink(destination: RedditView()) {
                     Text("Reddit Quiz")
                         .padding()
