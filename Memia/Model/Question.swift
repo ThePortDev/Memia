@@ -20,7 +20,7 @@ extension Question where ResponseType == [String] {
     init(question: String, answer: String, extraResponses: [String]) {
         self.question = question
         self.answer = answer
-        responses = extraResponses + [answer]
+        responses = extraResponses + [answer].shuffled()
     }
 }
 //extension Question where ResponseType == [String : String] {
