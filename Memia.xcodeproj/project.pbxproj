@@ -14,7 +14,6 @@
 		00CD8471291B02530065653B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00CD8470291B02530065653B /* Assets.xcassets */; };
 		00CD8474291B02530065653B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00CD8473291B02530065653B /* Preview Assets.xcassets */; };
 		00CD847E291B036E0065653B /* RedditMultipleChoiceQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD847D291B036E0065653B /* RedditMultipleChoiceQuiz.swift */; };
-		00CD8480291B03800065653B /* AcronymModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD847F291B03800065653B /* AcronymModel.swift */; };
 		00CD8482291B03890065653B /* NerdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD8481291B03890065653B /* NerdModel.swift */; };
 		00CD8484291B03960065653B /* PepePowerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD8483291B03960065653B /* PepePowerModel.swift */; };
 		00CD8487291B045B0065653B /* PepePowerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD8486291B045B0065653B /* PepePowerViewModel.swift */; };
@@ -22,6 +21,10 @@
 		00CD848B291B0B6D0065653B /* MultipleChoiceQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD848A291B0B6D0065653B /* MultipleChoiceQuiz.swift */; };
 		00D545AF291EC667006191BD /* TwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D545AE291EC667006191BD /* TwitchView.swift */; };
 		00D545B1291EC968006191BD /* RedditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D545B0291EC968006191BD /* RedditView.swift */; };
+		00F0EB34291ECEE500194AA2 /* Acronym .swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F0EB33291ECEE500194AA2 /* Acronym .swift */; };
+		00F0EB38291EF6CC00194AA2 /* AcronymViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F0EB37291EF6CC00194AA2 /* AcronymViewModel.swift */; };
+		00F0EB3A291EF70100194AA2 /* TextInputQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F0EB39291EF70100194AA2 /* TextInputQuiz.swift */; };
+		00F0EB3C291EF7CE00194AA2 /* AcronymInputQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F0EB3B291EF7CE00194AA2 /* AcronymInputQuestion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +36,6 @@
 		00CD8470291B02530065653B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00CD8473291B02530065653B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		00CD847D291B036E0065653B /* RedditMultipleChoiceQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditMultipleChoiceQuiz.swift; sourceTree = "<group>"; };
-		00CD847F291B03800065653B /* AcronymModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymModel.swift; sourceTree = "<group>"; };
 		00CD8481291B03890065653B /* NerdModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NerdModel.swift; sourceTree = "<group>"; };
 		00CD8483291B03960065653B /* PepePowerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PepePowerModel.swift; sourceTree = "<group>"; };
 		00CD8486291B045B0065653B /* PepePowerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PepePowerViewModel.swift; sourceTree = "<group>"; };
@@ -41,6 +43,10 @@
 		00CD848A291B0B6D0065653B /* MultipleChoiceQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiceQuiz.swift; sourceTree = "<group>"; };
 		00D545AE291EC667006191BD /* TwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitchView.swift; sourceTree = "<group>"; };
 		00D545B0291EC968006191BD /* RedditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditView.swift; sourceTree = "<group>"; };
+		00F0EB33291ECEE500194AA2 /* Acronym .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Acronym .swift"; sourceTree = "<group>"; };
+		00F0EB37291EF6CC00194AA2 /* AcronymViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymViewModel.swift; sourceTree = "<group>"; };
+		00F0EB39291EF70100194AA2 /* TextInputQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputQuiz.swift; sourceTree = "<group>"; };
+		00F0EB3B291EF7CE00194AA2 /* AcronymInputQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymInputQuestion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,7 @@
 				00CD846E291B02530065653B /* TriviaGameView.swift */,
 				00D545AE291EC667006191BD /* TwitchView.swift */,
 				00D545B0291EC968006191BD /* RedditView.swift */,
+				00F0EB33291ECEE500194AA2 /* Acronym .swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -106,11 +113,12 @@
 			isa = PBXGroup;
 			children = (
 				00CD847D291B036E0065653B /* RedditMultipleChoiceQuiz.swift */,
-				00CD847F291B03800065653B /* AcronymModel.swift */,
 				00CD8481291B03890065653B /* NerdModel.swift */,
 				00CD8483291B03960065653B /* PepePowerModel.swift */,
 				00CD8488291B05730065653B /* Question.swift */,
 				00CD848A291B0B6D0065653B /* MultipleChoiceQuiz.swift */,
+				00F0EB39291EF70100194AA2 /* TextInputQuiz.swift */,
+				00F0EB3B291EF7CE00194AA2 /* AcronymInputQuestion.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -120,6 +128,7 @@
 			children = (
 				00CD8486291B045B0065653B /* PepePowerViewModel.swift */,
 				00C1CDE6291DB972000072FD /* RedditViewModel.swift */,
+				00F0EB37291EF6CC00194AA2 /* AcronymViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -204,15 +213,18 @@
 			files = (
 				00CD846F291B02530065653B /* TriviaGameView.swift in Sources */,
 				00D545AF291EC667006191BD /* TwitchView.swift in Sources */,
+				00F0EB34291ECEE500194AA2 /* Acronym .swift in Sources */,
 				00D545B1291EC968006191BD /* RedditView.swift in Sources */,
 				00CD8489291B05730065653B /* Question.swift in Sources */,
 				00CD8484291B03960065653B /* PepePowerModel.swift in Sources */,
+				00F0EB3C291EF7CE00194AA2 /* AcronymInputQuestion.swift in Sources */,
 				00C1CDE5291C728F000072FD /* ShapePlusStyle.swift in Sources */,
+				00F0EB38291EF6CC00194AA2 /* AcronymViewModel.swift in Sources */,
 				00CD847E291B036E0065653B /* RedditMultipleChoiceQuiz.swift in Sources */,
 				00CD846D291B02530065653B /* MemiaApp.swift in Sources */,
 				00CD848B291B0B6D0065653B /* MultipleChoiceQuiz.swift in Sources */,
 				00C1CDE7291DB972000072FD /* RedditViewModel.swift in Sources */,
-				00CD8480291B03800065653B /* AcronymModel.swift in Sources */,
+				00F0EB3A291EF70100194AA2 /* TextInputQuiz.swift in Sources */,
 				00CD8482291B03890065653B /* NerdModel.swift in Sources */,
 				00CD8487291B045B0065653B /* PepePowerViewModel.swift in Sources */,
 			);

@@ -1,4 +1,4 @@
-//
+///
 //  RedditModel.swift
 //  Memia
 //
