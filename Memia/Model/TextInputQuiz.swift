@@ -16,7 +16,6 @@ struct TextInputQuiz {
         didSet {
             if oldValue == true {
                 questions = badQuestions
-                questions.shuffle()
                 score = 0
                 badQuestions = []
                 quizComplete.toggle()
@@ -50,39 +49,7 @@ extension TextInputQuiz {
             AcronymInputQuestion(
                 question: "BFFLUDDUP",
                 answer: "best friends for life until death do us part"
-            ),
-            AcronymInputQuestion(
-                question: "BMGWL",
-                answer: "busting my gut with laughter"
-            ),
-            AcronymInputQuestion(
-                question: "BOGSAT",
-                answer: "bunch of guys sitting around talking"
-            ),
-            AcronymInputQuestion(
-                question: "BTDTGTTSAWIO",
-                answer: "been there, done that, got the T-shirt and wore it out"
-            ),
-            AcronymInputQuestion(
-                question: "BTWITIAILWY",
-                answer: "by the way I think I am in love with you"
-            ),
-            AcronymInputQuestion(
-                question: "DFLA",
-                answer: "disenhanced four-letter acronym"
-            ),
-            AcronymInputQuestion(
-                question: "DITYIM",
-                answer: "did I tell you I’m depressed?"
-            ),
-            AcronymInputQuestion(
-                question: "DWISNWID",
-                answer: "do what I say not what I do"
-            ),
-            AcronymInputQuestion(
-                question: "FMDIDGAD",
-                answer: "frankly my dear I don’t give a damn"
-            ),
+            )
         ]
     )
 }

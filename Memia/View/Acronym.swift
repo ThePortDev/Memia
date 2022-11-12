@@ -6,15 +6,10 @@
 //
 
 import SwiftUI
-import AVKit
-
 
 struct AcronymView: View {
     
     @StateObject private var viewModel = AcronymViewModel()
-    
-    @State var audioPlayer: AVAudioPlayer!
-    
     @State private var response: String = ""
     
     @State private var alertInfo = (title: "", message: "", isShowing: false)
