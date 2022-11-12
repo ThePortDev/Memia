@@ -10,12 +10,6 @@ import SwiftUI
 struct TriviaGameView: View {
     
     @StateObject private var viewModel = MainMenuViewModel()
-    
-    @State var paidEnabled: Bool
-    
-    init(viewModel: MainMenuViewModel = MainMenuViewModel(), paidEnabled: Bool = false) {
-        self.paidEnabled = viewModel.paid
-    }
         
     var body: some View {
         NavigationView {
@@ -35,7 +29,7 @@ struct TriviaGameView: View {
     }
     
     var currencyView: some View {
-        NavigationLink(destination: ShopView().coinShop) {
+        NavigationLink(destination: ShopView(viewModel: viewModel).coinShop) {
             Text("Coins: " + "\(viewModel.coins)")
                 .font(.title3)
                 .padding()
@@ -73,7 +67,7 @@ struct TriviaGameView: View {
         }
     }
     var shopView: some View {
-        NavigationLink(destination: ShopView()) {
+        NavigationLink(destination: ShopView(viewModel: viewModel)) {
             Text("Shop 🛒")
                 .font(.title3)
                 .padding()
@@ -86,7 +80,7 @@ struct TriviaGameView: View {
     }
     var acronymView: some View {
         NavigationLink(destination: AcronymView()) {
-            Text("Acronym Quiz \(!paidEnabled ? "🔒" : "")")
+            Text("Acronym Quiz \(!viewModel.paid ? "🔒" : "")")
                 .padding()
                 .font(.largeTitle)
                 .foregroundColor(.black)
@@ -94,8 +88,8 @@ struct TriviaGameView: View {
                     RoundedRectangle(cornerRadius: 15)
                         .style(strokeColor: .black, strokeWidth: 3, fill: LinearGradient(colors: [.blue, .yellow, .red, .orange, .purple, .cyan, .green, .mint, .pink], startPoint: .leading, endPoint: .trailing))
                 )
-                .opacity(!paidEnabled ? 0.5 : 1)
-        } .disabled(!paidEnabled)
+                .opacity(!viewModel.paid ? 0.5 : 1)
+        } .disabled(!viewModel.paid)
     }
 }
 
