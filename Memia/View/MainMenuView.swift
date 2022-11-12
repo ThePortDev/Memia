@@ -7,18 +7,17 @@
 
 import SwiftUI
 
-struct TriviaGameView: View {
+struct MainMenuView: View {
     
     @StateObject private var viewModel = MainMenuViewModel()
         
     var body: some View {
         NavigationView {
-            VStack {
-                Spacer()
+            VStack(spacing: 50) {
                 twitchView
                 redditView
                 acronymView
-                Spacer()
+                makeAQuiz
                 HStack {
                     shopView
                     Spacer()
@@ -36,7 +35,20 @@ struct TriviaGameView: View {
                 .foregroundColor(.black)
                 .background(
                     RoundedRectangle(cornerRadius: 15)
-                        .style(strokeColor: .black, strokeWidth: 3, fill: .purple)
+                        .style(strokeColor: .black, strokeWidth: 3, fill: .green)
+                )
+        }
+    }
+    
+    var makeAQuiz: some View {
+        NavigationLink(destination: MakeAQuizView()) {
+            Text("Make A Quiz!")
+                .font(.largeTitle)
+                .padding()
+                .foregroundColor(.black)
+                .background(
+                    RoundedRectangle(cornerRadius: 15)
+                        .style(strokeColor: .black, strokeWidth: 3, fill: LinearGradient(colors: [.blue, .yellow, .red, .orange, .purple, .cyan, .green, .mint, .pink], startPoint: .leading, endPoint: .trailing))
                 )
         }
     }
@@ -86,15 +98,15 @@ struct TriviaGameView: View {
                 .foregroundColor(.black)
                 .background(
                     RoundedRectangle(cornerRadius: 15)
-                        .style(strokeColor: .black, strokeWidth: 3, fill: LinearGradient(colors: [.blue, .yellow, .red, .orange, .purple, .cyan, .green, .mint, .pink], startPoint: .leading, endPoint: .trailing))
+                        .style(strokeColor: .black, strokeWidth: 3, fill: .cyan)
                 )
                 .opacity(!viewModel.paid ? 0.5 : 1)
         } .disabled(!viewModel.paid)
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MainMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        TriviaGameView()
+        MainMenuView()
     }
 }
