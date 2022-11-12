@@ -11,7 +11,7 @@ import SwiftUI
 
 class MainMenuViewModel: ObservableObject {
     @Published var paid = false
-    var coins: Int = 0
+    var coins = coolCoins
     var iconLock = "🔒"
     
     func getPaid() {

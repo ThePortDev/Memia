@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+var coolCoins = 0
+
 struct ShopView: View {
     
     @ObservedObject var viewModel: MainMenuViewModel

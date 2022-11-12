@@ -15,6 +15,7 @@ struct MultipleChoiceQuiz <ResponseType: Collection> {
         didSet {
             if oldValue == true {
                 questions = badQuestions
+                questions.shuffle()
                 score = 0
                 badQuestions = []
                 quizComplete.toggle()

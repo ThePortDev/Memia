@@ -10,6 +10,7 @@ import SwiftUI
 struct AcronymView: View {
     
     @StateObject private var viewModel = AcronymViewModel()
+    
     @State private var response: String = ""
     
     @State private var alertInfo = (title: "", message: "", isShowing: false)
