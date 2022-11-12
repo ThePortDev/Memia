@@ -7,11 +7,16 @@
 
 import SwiftUI
 import HydraSwiftExtensions
+import AVKit
 
 struct MainMenuView: View {
     
     @StateObject private var viewModel = MainMenuViewModel()
-        
+    
+    @State var audioPlayer: AVAudioPlayer!
+      
+    let sound = Bundle.main.path(forResource: "elevator", ofType: "mp3")
+
     var body: some View {
 		NavigationView {
 			ZStack {
@@ -34,7 +39,7 @@ struct MainMenuView: View {
 				// Coins and shop HStack
 					HStack {
 						shopView
-						//Spacer()
+						Spacer()
 						//currencyView
 					}
 				}.padding(.horizontal)
@@ -43,6 +48,10 @@ struct MainMenuView: View {
     }
     
 	// Quiz views
+    
+  func playBackground() {
+          Sounds.playSounds(soundfile: "elevator.mp3", numOfLoops: -1)
+  }
 	
 	var twitchView: some View {
 		NavigationLink(destination: TwitchView()) {
@@ -143,11 +152,11 @@ struct MainMenuView: View {
 						.fontDesign(.rounded)
 				}
 			}
-		}
+		}.onAppear(perform: playBackground)
 	}
 	
     var currencyView: some View {
-        NavigationLink(destination: ShopView(viewModel: viewModel)) {
+        NavigationLink(destination: ShopView(viewModel: viewModel).coinShop) {
 			ZStack {
 				RoundedRectangle(cornerRadius: 15)
 					.style(strokeColor: Color(hex: "#6441a5")!, strokeWidth: 3, fill: .white)
