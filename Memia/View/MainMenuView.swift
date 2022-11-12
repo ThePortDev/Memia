@@ -34,8 +34,8 @@ struct MainMenuView: View {
 				// Coins and shop HStack
 					HStack {
 						shopView
-						Spacer()
-						currencyView
+						//Spacer()
+						//currencyView
 					}
 				}.padding(.horizontal)
 			}.accentColor(.black)
@@ -147,7 +147,7 @@ struct MainMenuView: View {
 	}
 	
     var currencyView: some View {
-        //NavigationLink(destination: ShopView(viewModel: viewModel).coinShop) {
+        NavigationLink(destination: ShopView(viewModel: viewModel)) {
 			ZStack {
 				RoundedRectangle(cornerRadius: 15)
 					.style(strokeColor: Color(hex: "#6441a5")!, strokeWidth: 3, fill: .white)
@@ -159,7 +159,7 @@ struct MainMenuView: View {
 						.fontDesign(.rounded)
 				}
 			}
-        //}
+        }
     }
 }
 
