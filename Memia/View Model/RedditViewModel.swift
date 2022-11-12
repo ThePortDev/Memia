@@ -18,6 +18,10 @@ class RedditViewModel <ResponseType : Collection> : ObservableObject {
     func nextQuestion() {
         quiz.pickNewQuestion()
     }
+	
+	func resetQuiz() {
+		quiz = MultipleChoiceQuiz<[String]>.redditModel
+	}
     
     func quizComplete() -> Bool {
         quiz.quizComplete

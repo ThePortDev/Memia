@@ -61,7 +61,8 @@ struct TwitchView: View {
 			AlertX(title: Text("\(alertNewGame.title)").font(.title2).bold(),
 				   message: Text("\(alertNewGame.message)").font(.title2),
 				   primaryButton: .default(Text("New Game").font(.title2), action: {
-				viewModel.nextQuestion()
+//				viewModel.nextQuestion()
+				viewModel.resetQuiz()
 			}),
 				   secondaryButton: .none,
 				   theme: .custom(
@@ -170,6 +171,7 @@ struct TwitchView: View {
 							.font(.body)
 							.fontDesign(.rounded)
 							.foregroundColor(.black)
+							.padding(.horizontal)
 					}
 				}
 			}
