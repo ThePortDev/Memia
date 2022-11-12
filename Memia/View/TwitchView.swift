@@ -144,7 +144,7 @@ struct TwitchView: View {
 	
 	var answers: some View {
 		VStack {
-			ForEach(Array<String>(viewModel.currentQuestion.responses.keys), id: \.self) { response in
+            ForEach(Array<String>(viewModel.currentQuestion.responses.keys.shuffled()), id: \.self) { response in
 				// Button functionality
 				Button {
 					if viewModel.isCorrect(response: response) {
