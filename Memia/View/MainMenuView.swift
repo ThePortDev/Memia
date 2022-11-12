@@ -6,10 +6,16 @@
 //
 
 import SwiftUI
+import AVKit
+
 
 struct MainMenuView: View {
     
     @StateObject private var viewModel = MainMenuViewModel()
+    
+    @State var audioPlayer: AVAudioPlayer!
+    
+    let sound = Bundle.main.path(forResource: "elevator", ofType: "mp3")
         
     var body: some View {
         NavigationView {
@@ -37,6 +43,10 @@ struct MainMenuView: View {
         }.accentColor(.black)
     }
     
+    func playBackground() {
+        Sounds.playSounds(soundfile: "elevator.mp3", numOfLoops: -1)
+    }
+    
     var currencyView: some View {
         NavigationLink(destination: ShopView(viewModel: viewModel).coinShop) {
             Text("Coins: " + "\(viewModel.coins)")
@@ -48,6 +58,7 @@ struct MainMenuView: View {
                         .style(strokeColor: .black, strokeWidth: 3, fill: .green)
                 )
         }
+        .onAppear(perform: playBackground)
     }
     
     var makeAQuiz: some View {

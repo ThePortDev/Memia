@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import AVKit
+
 
 var coolCoins = 0
 
 struct ShopView: View {
+    
+    @State var audioPlayer: AVAudioPlayer!
     
     @ObservedObject var viewModel: MainMenuViewModel
     
@@ -43,17 +47,20 @@ struct ShopView: View {
     var coinShop: some View {
         VStack {
             Text("This is a coin shop")
-            Button {
-                viewModel.getPaid()
-            } label: {
-                Text("Rob Us")
-                    .font(.title3)
-                    .padding()
-                    .foregroundColor(.black)
-                    .background(
-                        RoundedRectangle(cornerRadius: 15)
-                            .style(strokeColor: .black, strokeWidth: 3, fill: .purple)
-                    )
+            NavigationLink( destination: MainMenuView()) {
+                Button {
+                    Sounds.playSounds(soundfile: "nooo.mp3", numOfLoops: 0)
+                    viewModel.getPaid()
+                } label: {
+                    Text("Rob Us")
+                        .font(.title3)
+                        .padding()
+                        .foregroundColor(.black)
+                        .background(
+                            RoundedRectangle(cornerRadius: 15)
+                                .style(strokeColor: .black, strokeWidth: 3, fill: .purple)
+                        )
+                }
             }
         }
     }

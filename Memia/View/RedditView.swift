@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct RedditView: View {
     
@@ -98,7 +99,7 @@ struct RedditView: View {
     
     var answers: some View {
         VStack {
-            ForEach(Array<String>(viewModel.currentQuestion.responses), id: \.self) { response in
+            ForEach(Array<String>(viewModel.currentQuestion.responses.shuffled()), id: \.self) { response in
                 Button {
                     if viewModel.isCorrect(response: response) {
                         alertInfo.title = "That's correct!"
