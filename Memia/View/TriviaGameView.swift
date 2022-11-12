@@ -9,8 +9,11 @@ import SwiftUI
 
 struct TriviaGameView: View {
     
+<<<<<<< Updated upstream
+=======
     @StateObject private var viewModel = MainMenuViewModel()
         
+>>>>>>> Stashed changes
     var body: some View {
         
         NavigationView {
@@ -35,6 +38,8 @@ struct TriviaGameView: View {
             }
         }.accentColor(.black)
     }
+<<<<<<< Updated upstream
+=======
     
     var currencyView: some View {
         NavigationLink(destination: ShopView(viewModel: viewModel).coinShop) {
