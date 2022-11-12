@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import HydraSwiftExtensions
 
 struct TwitchView: View {
     
@@ -16,18 +17,21 @@ struct TwitchView: View {
     @State private var alertNewGame = (title: "", message: "", isShowing: false)
     
     var body: some View {
-        ZStack {
-            LinearGradient(colors: [.indigo, .indigo, .indigo, .mint], startPoint: .leading, endPoint: .trailing)
+		ZStack {
+			// Background fill
+//			LinearGradient(colors: [.indigo, .indigo, .mint, .mint], startPoint: .leading, endPoint: .trailing)
+			Color(hex: "#E3C0FF")
                 .ignoresSafeArea()
+			// Stack of views
             VStack(spacing: 15) {
                 question
-                    .shadow(color: .white, radius: 1)
                 answers
-                    .shadow(color: .white, radius: 1)
                 imageGuy
             }
+			.shadow( radius: 3, x: 0, y: 0)
             .padding(.vertical)
         }
+		// Fun alerts!
         .alert(alertInfo.title, isPresented: $alertInfo.isShowing) {
             Button("Continue") {
                 viewModel.nextQuestion()
@@ -39,6 +43,9 @@ struct TwitchView: View {
             }
         } message: {
             Text(alertInfo.message)
+				.foregroundColor(.purple)
+				.shadow(radius: 1)
+				.multilineTextAlignment(.center)
         }
         .alert(alertNewGame.title, isPresented: $alertNewGame.isShowing) {
             Button("New Game") {
@@ -64,9 +71,14 @@ struct TwitchView: View {
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 25)
-                        .style(strokeColor: LinearGradient(colors: [.black, .purple, .black], startPoint: .leading, endPoint: .trailing), strokeWidth: 4, fill: LinearGradient(colors: [.blue, .cyan, .blue], startPoint: .leading, endPoint: .trailing))
+						.style(
+							strokeColor: Color(hex: "#6441A5")!,
+							strokeWidth: 4,
+							fill:  LinearGradient(colors: [ Color(hex: "#6441a5")!, Color(hex: "#9146ff")!, Color(hex: "#6441a5")! ], startPoint: .leading, endPoint: .trailing)
+						)
                     Text("New Game")
-                        .foregroundColor(.black)
+                        .foregroundColor(.white)
+						.bold()
                 }
             }
             Image(uiImage: UIImage(imageLiteralResourceName: "twitch.png"))
@@ -74,9 +86,14 @@ struct TwitchView: View {
                 .aspectRatio(contentMode: .fit)
             ZStack {
                 RoundedRectangle(cornerRadius: 25)
-                    .style(strokeColor: LinearGradient(colors: [.black, .purple, .black], startPoint: .leading, endPoint: .trailing), strokeWidth: 4, fill:  LinearGradient(colors: [.blue, .cyan, .blue], startPoint: .leading, endPoint: .trailing))
+					.style(
+						strokeColor: Color(hex: "#6441A5")!,
+						strokeWidth: 4,
+						fill:  LinearGradient(colors: [ Color(hex: "#6441a5")!, Color(hex: "#9146ff")!, Color(hex: "#6441a5")! ], startPoint: .leading, endPoint: .trailing)
+					)
                 Text("Score: \(viewModel.getScore())")
-                    .foregroundColor(.black)
+                    .foregroundColor(.white)
+					.bold()
             }
         }
         .frame(height: 50)
@@ -85,20 +102,29 @@ struct TwitchView: View {
     
     var question: some View {
         Text(viewModel.currentQuestion.question)
+			// Text style formatting
             .font(.title3)
-            .fontDesign(.serif)
+			.fontDesign(.rounded)
+			.bold()
+			.foregroundColor(.white)
+			.shadow(radius: 1)
             .multilineTextAlignment(.center)
+			// Other formatting
             .padding()
             .background(RoundedRectangle(cornerRadius: 25)
-                .style(strokeColor: LinearGradient(colors: [.black, .purple, .black], startPoint: .leading, endPoint: .trailing), strokeWidth: 4, fill:  LinearGradient(colors: [.blue, .cyan, .blue], startPoint: .leading, endPoint: .trailing)))
+					.style(
+						strokeColor: Color(hex: "#6441A5")!,
+						strokeWidth: 4,
+						fill:  LinearGradient(colors: [ Color(hex: "#6441a5")!, Color(hex: "#9146ff")!, Color(hex: "#6441a5")! ], startPoint: .leading, endPoint: .trailing)
+					)
+			)
             .padding(.horizontal)
-            .foregroundColor(.black)
-        
     }
     
     var answers: some View {
         VStack {
             ForEach(Array<String>(viewModel.currentQuestion.responses.keys), id: \.self) { response in
+				// Button functionality
                 Button {
                     if viewModel.isCorrect(response: response) {
                         alertInfo.title = "That's correct!"
@@ -110,15 +136,22 @@ struct TwitchView: View {
                         alertInfo.message = viewModel.currentQuestion.responses[response]!
                         alertInfo.isShowing = true
                     }
+				// Button label formatting
                 } label: {
                     ZStack {
+						// Button background
                         RoundedRectangle(cornerRadius: 25)
-                        
-                            .style(strokeColor: LinearGradient(colors: [.black, .purple, .black], startPoint: .leading, endPoint: .trailing), strokeWidth: 4, fill: LinearGradient(colors: [.blue, .cyan, .blue], startPoint: .leading, endPoint: .trailing))
+                            .style(
+								strokeColor: Color(hex: "#6441a5")!,
+								strokeWidth: 4,
+								fill: Color(hex: "#FFFFFF")!)
+						// Button text
                         Text(response)
+							.font(.body)
+							.fontDesign(.rounded)
                             .foregroundColor(.black)
                     }
-                }
+				}
             }
         }
         .padding()

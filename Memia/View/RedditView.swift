@@ -17,7 +17,7 @@ struct RedditView: View {
     
     var body: some View {
         ZStack {
-            LinearGradient(colors: [.indigo, .indigo, .indigo, .mint], startPoint: .leading, endPoint: .trailing)
+            LinearGradient(colors: [.red, .orange, .orange, .orange, .orange, .orange, .red], startPoint: .leading, endPoint: .trailing)
                 .ignoresSafeArea()
             VStack(spacing: 15) {
                 question
@@ -64,17 +64,17 @@ struct RedditView: View {
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 25)
-                        .style(strokeColor: LinearGradient(colors: [.black, .purple, .black], startPoint: .leading, endPoint: .trailing), strokeWidth: 4, fill: LinearGradient(colors: [.blue, .cyan, .blue], startPoint: .leading, endPoint: .trailing))
+                        .style(strokeColor: LinearGradient(colors: [.black, .red, .black], startPoint: .leading, endPoint: .trailing), strokeWidth: 4, fill: .white)
                     Text("New Game")
                         .foregroundColor(.black)
                 }
             }
-            Image(uiImage: UIImage(imageLiteralResourceName: "twitch.png"))
+            Image(uiImage: UIImage(imageLiteralResourceName: "reddit.png"))
                 .resizable()
                 .aspectRatio(contentMode: .fit)
             ZStack {
                 RoundedRectangle(cornerRadius: 25)
-                    .style(strokeColor: LinearGradient(colors: [.black, .purple, .black], startPoint: .leading, endPoint: .trailing), strokeWidth: 4, fill:  LinearGradient(colors: [.blue, .cyan, .blue], startPoint: .leading, endPoint: .trailing))
+                    .style(strokeColor: LinearGradient(colors: [.black, .red, .black], startPoint: .leading, endPoint: .trailing), strokeWidth: 4, fill: .white)
                 Text("Score: \(viewModel.getScore())")
                     .foregroundColor(.black)
             }
@@ -90,10 +90,10 @@ struct RedditView: View {
             .multilineTextAlignment(.center)
             .padding()
             .background(RoundedRectangle(cornerRadius: 25)
-                .style(strokeColor: LinearGradient(colors: [.black, .purple, .black], startPoint: .leading, endPoint: .trailing), strokeWidth: 4, fill:  LinearGradient(colors: [.blue, .cyan, .blue], startPoint: .leading, endPoint: .trailing)))
+                .style(strokeColor: LinearGradient(colors: [.black, .red, .black], startPoint: .leading, endPoint: .trailing), strokeWidth: 4, fill: .white)
+            )
             .padding(.horizontal)
             .foregroundColor(.black)
-        
     }
     
     var answers: some View {
@@ -113,8 +113,7 @@ struct RedditView: View {
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 25)
-                        
-                            .style(strokeColor: LinearGradient(colors: [.black, .purple, .black], startPoint: .leading, endPoint: .trailing), strokeWidth: 4, fill: LinearGradient(colors: [.blue, .cyan, .blue], startPoint: .leading, endPoint: .trailing))
+                            .style(strokeColor: LinearGradient(colors: [.black, .red, .black], startPoint: .leading, endPoint: .trailing), strokeWidth: 4, fill: .white)
                         Text(response)
                             .foregroundColor(.black)
                     }

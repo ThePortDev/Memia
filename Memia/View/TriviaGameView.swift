@@ -12,36 +12,26 @@ struct TriviaGameView: View {
     var body: some View {
         
         NavigationView {
-            VStack(spacing: 50) {
+            HStack {
                 NavigationLink(destination: TwitchView()) {
                     Text("Twitch Quiz")
                         .padding()
-                        .foregroundColor(.black)
                         .background(
                             RoundedRectangle(cornerRadius: 15)
-                                .style(strokeColor: .black, strokeWidth: 3, fill: .purple)
+                                .style(strokeColor: .black, strokeWidth: 3, fill: .white)
                         )
                 }
+				.navigationTitle("Pick A Quiz!")
                 NavigationLink(destination: RedditView()) {
                     Text("Reddit Quiz")
                         .padding()
-                        .foregroundColor(.black)
                         .background(
                             RoundedRectangle(cornerRadius: 15)
-                                .style(strokeColor: .black, strokeWidth: 3, fill: .red)
-                        )
-                }
-                NavigationLink(destination: AcronymView()) {
-                    Text("Acronym Quiz")
-                        .padding()
-                        .foregroundColor(.black)
-                        .background(
-                            RoundedRectangle(cornerRadius: 15)
-                                .style(strokeColor: .black, strokeWidth: 3, fill: LinearGradient(colors: [.blue, .yellow, .red, .orange, .purple, .cyan, .green, .mint, .pink], startPoint: .leading, endPoint: .trailing))
+                                .style(strokeColor: .black, strokeWidth: 3, fill: .white)
                         )
                 }
             }
-        }
+        }.accentColor(.black)
     }
 }
 
