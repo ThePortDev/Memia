@@ -14,15 +14,25 @@ struct MainMenuView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 50) {
+                Spacer()
                 twitchView
                 redditView
                 acronymView
-                makeAQuiz
+                //makeAQuiz
                 HStack {
                     shopView
                     Spacer()
                     currencyView
                 }.padding()
+                Spacer()
+                Text("Items with a '🔒' require coins to unlock")
+                    .font(.title3)
+                    .padding()
+                    .foregroundColor(.black)
+                    .background(
+                        RoundedRectangle(cornerRadius: 15)
+                            .style(strokeColor: .black, strokeWidth: 3, fill: .pink)
+                    )
             }
         }.accentColor(.black)
     }
@@ -41,15 +51,16 @@ struct MainMenuView: View {
     }
     
     var makeAQuiz: some View {
-        NavigationLink(destination: MakeAQuizView()) {
-            Text("Make A Quiz!")
+        NavigationLink(destination: MakeAQuizView(viewModel: viewModel)) {
+            Text("Make A Quiz! \(!viewModel.paid ? "🔒" : "")")
                 .font(.largeTitle)
                 .padding()
                 .foregroundColor(.black)
                 .background(
                     RoundedRectangle(cornerRadius: 15)
                         .style(strokeColor: .black, strokeWidth: 3, fill: LinearGradient(colors: [.blue, .yellow, .red, .orange, .purple, .cyan, .green, .mint, .pink], startPoint: .leading, endPoint: .trailing))
-                )
+                ).opacity(!viewModel.paid ? 0.5 : 1)
+                .disabled(!viewModel.paid)
         }
     }
     
@@ -68,7 +79,7 @@ struct MainMenuView: View {
     
     var redditView: some View {
         NavigationLink(destination: RedditView()) {
-            Text("Reddit Quiz")
+            Text("Reddit Quiz \(!viewModel.paid ? "🔒" : "")")
                 .font(.largeTitle)
                 .padding()
                 .foregroundColor(.black)
@@ -76,7 +87,8 @@ struct MainMenuView: View {
                     RoundedRectangle(cornerRadius: 15)
                         .style(strokeColor: .black, strokeWidth: 3, fill: .red)
                 )
-        }
+                .opacity(!viewModel.paid ? 0.5 : 1)
+        } .disabled(!viewModel.paid)
     }
     var shopView: some View {
         NavigationLink(destination: ShopView(viewModel: viewModel)) {

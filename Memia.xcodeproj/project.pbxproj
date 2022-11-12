@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		001E0FD2291F5745008427ED /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001E0FD1291F5745008427ED /* FileManager.swift */; };
 		001E0FD4291F58EA008427ED /* MakeAQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001E0FD3291F58EA008427ED /* MakeAQuiz.swift */; };
+		001E0FD6291F6955008427ED /* elevator.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 001E0FD5291F6955008427ED /* elevator.mp3 */; };
 		00C1CDE5291C728F000072FD /* ShapePlusStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C1CDE4291C728F000072FD /* ShapePlusStyle.swift */; };
 		00C1CDE7291DB972000072FD /* RedditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C1CDE6291DB972000072FD /* RedditViewModel.swift */; };
 		00CD846D291B02530065653B /* MemiaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD846C291B02530065653B /* MemiaApp.swift */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		001E0FD1291F5745008427ED /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		001E0FD3291F58EA008427ED /* MakeAQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeAQuiz.swift; sourceTree = "<group>"; };
+		001E0FD5291F6955008427ED /* elevator.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = elevator.mp3; sourceTree = "<group>"; };
 		00C1CDE4291C728F000072FD /* ShapePlusStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapePlusStyle.swift; sourceTree = "<group>"; };
 		00C1CDE6291DB972000072FD /* RedditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditViewModel.swift; sourceTree = "<group>"; };
 		00CD8469291B02530065653B /* Memia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +93,7 @@
 		00CD846B291B02530065653B /* Memia */ = {
 			isa = PBXGroup;
 			children = (
+				001E0FD5291F6955008427ED /* elevator.mp3 */,
 				001E0FD1291F5745008427ED /* FileManager.swift */,
 				00CD847B291B02E60065653B /* Model */,
 				00CD847C291B03340065653B /* View Model */,
@@ -224,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00CD8474291B02530065653B /* Preview Assets.xcassets in Resources */,
+				001E0FD6291F6955008427ED /* elevator.mp3 in Resources */,
 				00CD8471291B02530065653B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
