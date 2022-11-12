@@ -34,9 +34,9 @@ struct TwitchView: View {
 		// XAlert!
 		// Answer/continue button
 		.alertX(isPresented: $alertInfo.isShowing, content: {
-			AlertX(title: Text("\(alertInfo.title)"),
-				   message: Text("\(alertInfo.message)"),
-				   primaryButton: .default(Text("Continue"), action: {
+			AlertX(title: Text("\(alertInfo.title)").font(.title2).bold(),
+				   message: Text("\(alertInfo.message)").font(.title2),
+				   primaryButton: .default(Text("Continue").font(.title2), action: {
 				viewModel.nextQuestion()
 				if viewModel.quizComplete() {
 					alertNewGame.title = "You finished the quiz!"
@@ -44,22 +44,40 @@ struct TwitchView: View {
 					alertNewGame.isShowing = true
 				}
 			}),
-				   theme: .defaultTheme,
-				   animation: .classicEffect())
+				   theme: .custom(
+						windowColor: Color(hex: "#6441A5")!,
+						alertTextColor: Color(hex: "#ffffff")!,
+						enableShadow: false,
+						enableRoundedCorners: true,
+						enableTransparency: false,
+						cancelButtonColor: Color(hex: "#9146ff")!,
+						cancelButtonTextColor: Color(hex: "#ffffff")!,
+						defaultButtonColor: Color(hex: "#9146ff")!,
+						defaultButtonTextColor: Color(hex: "#ffffff")!),
+					animation: .classicEffect())
 		})
 		// New game alert
 		.alertX(isPresented: $alertNewGame.isShowing, content: {
-			AlertX(title: Text("\(alertNewGame.title)"),
-				   message: Text("\(alertNewGame.message)"),
-				   primaryButton: .default(Text("New Game"), action: {
+			AlertX(title: Text("\(alertNewGame.title)").font(.title2).bold(),
+				   message: Text("\(alertNewGame.message)").font(.title2),
+				   primaryButton: .default(Text("New Game").font(.title2), action: {
 				viewModel.nextQuestion()
 			}),
-				   secondaryButton: .default(Text("Stop Playing"), action: {
+				   secondaryButton: .default(Text("Stop Playing").font(.title2), action: {
 				alertInfo.title = "Okay, then Quit."
-				alertInfo.message = "Anytime now."
+				alertInfo.message = "Go on, Anytime now."
 				alertInfo.isShowing = true
 			}),
-				   theme: .defaultTheme,
+				   theme: .custom(
+					windowColor: Color(hex: "#6441A5")!,
+					   alertTextColor: Color(hex: "#ffffff")!,
+					   enableShadow: false,
+					   enableRoundedCorners: true,
+					   enableTransparency: false,
+					   cancelButtonColor: Color(hex: "#9146ff")!,
+					   cancelButtonTextColor: Color(hex: "#ffffff")!,
+					   defaultButtonColor: Color(hex: "#9146ff")!,
+					   defaultButtonTextColor: Color(hex: "#ffffff")!),
 				   animation: .classicEffect())
 		})
 	}
@@ -150,7 +168,7 @@ struct TwitchView: View {
 							.style(
 								strokeColor: Color(hex: "#6441a5")!,
 								strokeWidth: 4,
-								fill: Color(hex: "#FFFFFF")!)
+								fill: Color(hex: "#ffffff")!)
 						// Button text
 						Text(response)
 							.font(.body)

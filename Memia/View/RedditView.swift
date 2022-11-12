@@ -26,7 +26,7 @@ struct RedditView: View {
                     .shadow(color: .white, radius: 1)
                 imageGuy
             }
-            .padding(.vertical)
+			.padding(.vertical)
         }
         .alert(alertInfo.title, isPresented: $alertInfo.isShowing) {
             Button("Continue") {
