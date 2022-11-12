@@ -63,11 +63,7 @@ struct TwitchView: View {
 				   primaryButton: .default(Text("New Game").font(.title2), action: {
 				viewModel.nextQuestion()
 			}),
-				   secondaryButton: .default(Text("Stop Playing").font(.title2), action: {
-				alertInfo.title = "Okay, then Quit."
-				alertInfo.message = "Go on, Anytime now."
-				alertInfo.isShowing = true
-			}),
+				   secondaryButton: .none,
 				   theme: .custom(
 					windowColor: Color(hex: "#6441A5")!,
 					   alertTextColor: Color(hex: "#ffffff")!,
