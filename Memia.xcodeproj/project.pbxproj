@@ -26,6 +26,7 @@
 		00F0EB3A291EF70100194AA2 /* TextInputQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F0EB39291EF70100194AA2 /* TextInputQuiz.swift */; };
 		00F0EB3C291EF7CE00194AA2 /* AcronymInputQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F0EB3B291EF7CE00194AA2 /* AcronymInputQuestion.swift */; };
 		90B1EEC6291F052200D7AF1E /* HydraSwiftExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 90B1EEC5291F052200D7AF1E /* HydraSwiftExtensions */; };
+		90B1EECC291F1B6100D7AF1E /* AlertX in Frameworks */ = {isa = PBXBuildFile; productRef = 90B1EECB291F1B6100D7AF1E /* AlertX */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90B1EECC291F1B6100D7AF1E /* AlertX in Frameworks */,
 				90B1EEC6291F052200D7AF1E /* HydraSwiftExtensions in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,6 +163,7 @@
 			name = Memia;
 			packageProductDependencies = (
 				90B1EEC5291F052200D7AF1E /* HydraSwiftExtensions */,
+				90B1EECB291F1B6100D7AF1E /* AlertX */,
 			);
 			productName = Memia;
 			productReference = 00CD8469291B02530065653B /* Memia.app */;
@@ -192,6 +195,7 @@
 			mainGroup = 00CD8460291B02530065653B;
 			packageReferences = (
 				90B1EEC4291F052200D7AF1E /* XCRemoteSwiftPackageReference "HydraSwiftExtensions" */,
+				90B1EECA291F1B6100D7AF1E /* XCRemoteSwiftPackageReference "AlertX" */,
 			);
 			productRefGroup = 00CD846A291B02530065653B /* Products */;
 			projectDirPath = "";
@@ -445,6 +449,14 @@
 				kind = branch;
 			};
 		};
+		90B1EECA291F1B6100D7AF1E /* XCRemoteSwiftPackageReference "AlertX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/neel-makhecha/AlertX.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -452,6 +464,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 90B1EEC4291F052200D7AF1E /* XCRemoteSwiftPackageReference "HydraSwiftExtensions" */;
 			productName = HydraSwiftExtensions;
+		};
+		90B1EECB291F1B6100D7AF1E /* AlertX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90B1EECA291F1B6100D7AF1E /* XCRemoteSwiftPackageReference "AlertX" */;
+			productName = AlertX;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

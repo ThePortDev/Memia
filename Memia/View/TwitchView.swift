@@ -7,6 +7,7 @@
 
 import SwiftUI
 import HydraSwiftExtensions
+import AlertX
 
 struct TwitchView: View {
     
@@ -14,12 +15,13 @@ struct TwitchView: View {
     
     @State private var alertInfo = (title: "", message: "", isShowing: false)
     
-    @State private var alertNewGame = (title: "", message: "", isShowing: false)
+    @State private var alertNewGame = (title: "", message: "")
+	
+	@State private var showAlertX = false
     
     var body: some View {
 		ZStack {
 			// Background fill
-//			LinearGradient(colors: [.indigo, .indigo, .mint, .mint], startPoint: .leading, endPoint: .trailing)
 			Color(hex: "#E3C0FF")
                 .ignoresSafeArea()
 			// Stack of views
@@ -27,38 +29,59 @@ struct TwitchView: View {
                 question
                 answers
                 imageGuy
+				// XAlert!
+				Button(action: {
+					
+					self.showAlertX.toggle()
+					
+				}, label: {
+					
+					Text("Show AlertX")
+					
+				}).alertX(isPresented: $showAlertX, content: {
+					
+					AlertX(title: Text("\(alertInfo.title)"),
+						   message: Text("\(alertInfo.message)"),
+						   primaryButton: .cancel(),
+						   secondaryButton: .default(Text("Done"), action: {
+							// Some action
+						   }),
+						   theme: .defaultTheme,
+						   animation: .classicEffect())
+				})
             }
 			.shadow( radius: 3, x: 0, y: 0)
             .padding(.vertical)
         }
+		
 		// Fun alerts!
-        .alert(alertInfo.title, isPresented: $alertInfo.isShowing) {
-            Button("Continue") {
-                viewModel.nextQuestion()
-                if viewModel.quizComplete() {
-                    alertNewGame.title = "You finished the quiz!"
-                    alertNewGame.message = "You got \(viewModel.getScore())/\(viewModel.getQuestionsCount() + 1) questions correct!"
-                    alertNewGame.isShowing = true
-                }
-            }
-        } message: {
-            Text(alertInfo.message)
-				.foregroundColor(.purple)
-				.shadow(radius: 1)
-				.multilineTextAlignment(.center)
-        }
-        .alert(alertNewGame.title, isPresented: $alertNewGame.isShowing) {
-            Button("New Game") {
-                viewModel.nextQuestion()
-            }
-            Button("Stop Playing") {
-                alertInfo.title = "Okay. Then Quit."
-                alertInfo.message = "Anytime now."
-                alertInfo.isShowing = true
-            }
-        } message: {
-            Text(alertNewGame.message)
-        }
+//        .alert(alertInfo.title, isPresented: $alertInfo.isShowing) {
+//            Button("Continue") {
+//                viewModel.nextQuestion()
+//                if viewModel.quizComplete() {
+//                    alertNewGame.title = "You finished the quiz!"
+//                    alertNewGame.message = "You got \(viewModel.getScore())/\(viewModel.getQuestionsCount() + 1) questions correct!"
+//                    alertNewGame.showAlertX = true
+//                }
+//            }
+//        } message: {
+//            Text(alertInfo.message)
+//				.foregroundColor(.purple)
+//				.shadow(radius: 1)
+//				.multilineTextAlignment(.center)
+//        }
+//        .alert(alertNewGame.title, isPresented: $alertNewGame.isShowing) {
+//            Button("New Game") {
+//                viewModel.nextQuestion()
+//            }
+//            Button("Stop Playing") {
+//                alertInfo.title = "Okay. Then Quit."
+//                alertInfo.message = "Anytime now."
+//                //alertInfo.isShowing = true
+//            }
+//        } message: {
+//            Text(alertNewGame.message)
+//        }
     }
     
     var imageGuy: some View {
@@ -67,7 +90,7 @@ struct TwitchView: View {
                 viewModel.finishQuiz()
                 alertNewGame.title = "You ended the quiz early? What the heck!"
                 alertNewGame.message = "You got \(viewModel.getScore())/\(viewModel.getQuestionsCount() + 1) questions correct!"
-                alertNewGame.isShowing = true
+                //alertNewGame.isShowing = true
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 25)
@@ -129,12 +152,12 @@ struct TwitchView: View {
                     if viewModel.isCorrect(response: response) {
                         alertInfo.title = "That's correct!"
                         alertInfo.message = viewModel.currentQuestion.responses[response]!
-                        alertInfo.isShowing = true
+                        showAlertX = true
                         
                     } else {
                         alertInfo.title = "Not Quite!"
                         alertInfo.message = viewModel.currentQuestion.responses[response]!
-                        alertInfo.isShowing = true
+						showAlertX = true
                     }
 				// Button label formatting
                 } label: {
