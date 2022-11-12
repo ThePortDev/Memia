@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import HydraSwiftExtensions
 
 extension Shape {
     func style <Stroke: ShapeStyle, Fill: ShapeStyle> (
@@ -19,3 +19,4 @@ extension Shape {
             .background(fill(fillContent))
     }
 }
+
