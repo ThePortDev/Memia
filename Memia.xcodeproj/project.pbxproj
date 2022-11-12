@@ -29,6 +29,10 @@
 		00F0EB3C291EF7CE00194AA2 /* AcronymInputQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F0EB3B291EF7CE00194AA2 /* AcronymInputQuestion.swift */; };
 		00F7F926291F149D00DC83F3 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F7F925291F149D00DC83F3 /* Shop.swift */; };
 		00F7F928291F1E3800DC83F3 /* MainMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F7F927291F1E3800DC83F3 /* MainMenuViewModel.swift */; };
+		9061B449291FA30E00827448 /* Victory fanfare two (mediocre).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9061B448291FA30E00827448 /* Victory fanfare two (mediocre).mp3 */; };
+		9061B44B291FA37C00827448 /* victory fanfare.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9061B44A291FA37C00827448 /* victory fanfare.mp3 */; };
+		9061B44D291FA38400827448 /* victory fanfare 3 (horrid).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9061B44C291FA38400827448 /* victory fanfare 3 (horrid).mp3 */; };
+		9061B44F291FA38D00827448 /* interaction noise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9061B44E291FA38D00827448 /* interaction noise.mp3 */; };
 		90B1EEC6291F052200D7AF1E /* HydraSwiftExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 90B1EEC5291F052200D7AF1E /* HydraSwiftExtensions */; };
 		90B1EECC291F1B6100D7AF1E /* AlertX in Frameworks */ = {isa = PBXBuildFile; productRef = 90B1EECB291F1B6100D7AF1E /* AlertX */; };
 /* End PBXBuildFile section */
@@ -57,6 +61,10 @@
 		00F0EB3B291EF7CE00194AA2 /* AcronymInputQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronymInputQuestion.swift; sourceTree = "<group>"; };
 		00F7F925291F149D00DC83F3 /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 		00F7F927291F1E3800DC83F3 /* MainMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewModel.swift; sourceTree = "<group>"; };
+		9061B448291FA30E00827448 /* Victory fanfare two (mediocre).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Victory fanfare two (mediocre).mp3"; path = "../../../../../Downloads/Victory fanfare two (mediocre).mp3"; sourceTree = "<group>"; };
+		9061B44A291FA37C00827448 /* victory fanfare.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "victory fanfare.mp3"; sourceTree = "<group>"; };
+		9061B44C291FA38400827448 /* victory fanfare 3 (horrid).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "victory fanfare 3 (horrid).mp3"; sourceTree = "<group>"; };
+		9061B44E291FA38D00827448 /* interaction noise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "interaction noise.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +99,10 @@
 		00CD846B291B02530065653B /* Memia */ = {
 			isa = PBXGroup;
 			children = (
+				9061B44E291FA38D00827448 /* interaction noise.mp3 */,
+				9061B44A291FA37C00827448 /* victory fanfare.mp3 */,
+				9061B448291FA30E00827448 /* Victory fanfare two (mediocre).mp3 */,
+				9061B44C291FA38400827448 /* victory fanfare 3 (horrid).mp3 */,
 				001E0FD1291F5745008427ED /* FileManager.swift */,
 				00CD847B291B02E60065653B /* Model */,
 				00CD847C291B03340065653B /* View Model */,
@@ -223,8 +235,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9061B44B291FA37C00827448 /* victory fanfare.mp3 in Resources */,
 				00CD8474291B02530065653B /* Preview Assets.xcassets in Resources */,
 				00CD8471291B02530065653B /* Assets.xcassets in Resources */,
+				9061B44F291FA38D00827448 /* interaction noise.mp3 in Resources */,
+				9061B449291FA30E00827448 /* Victory fanfare two (mediocre).mp3 in Resources */,
+				9061B44D291FA38400827448 /* victory fanfare 3 (horrid).mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
