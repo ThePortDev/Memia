@@ -10,7 +10,7 @@ import SwiftUI
 
 
 class MainMenuViewModel: ObservableObject {
-    @State var paid = false
+    @Published var paid = false
     var coins: Int = 0
     var iconLock = "🔒"
     

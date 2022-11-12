@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ShopView: View {
     
-    @StateObject private var viewModel = MainMenuViewModel()
+    @ObservedObject var viewModel: MainMenuViewModel
     
     var body: some View {
         NavigationLink(destination: coinShop) {

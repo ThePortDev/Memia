@@ -7,24 +7,17 @@
 
 import SwiftUI
 
-struct TriviaGameView: View {
+struct MainMenuView: View {
     
     @StateObject private var viewModel = MainMenuViewModel()
-    
-    @State var paidEnabled: Bool
-    
-    init(viewModel: MainMenuViewModel = MainMenuViewModel(), paidEnabled: Bool = false) {
-        self.paidEnabled = viewModel.paid
-    }
         
     var body: some View {
         NavigationView {
-            VStack {
-                Spacer()
+            VStack(spacing: 50) {
                 twitchView
                 redditView
                 acronymView
-                Spacer()
+                makeAQuiz
                 HStack {
                     shopView
                     Spacer()
@@ -35,14 +28,27 @@ struct TriviaGameView: View {
     }
     
     var currencyView: some View {
-        NavigationLink(destination: ShopView().coinShop) {
+        NavigationLink(destination: ShopView(viewModel: viewModel).coinShop) {
             Text("Coins: " + "\(viewModel.coins)")
                 .font(.title3)
                 .padding()
                 .foregroundColor(.black)
                 .background(
                     RoundedRectangle(cornerRadius: 15)
-                        .style(strokeColor: .black, strokeWidth: 3, fill: .purple)
+                        .style(strokeColor: .black, strokeWidth: 3, fill: .green)
+                )
+        }
+    }
+    
+    var makeAQuiz: some View {
+        NavigationLink(destination: MakeAQuizView()) {
+            Text("Make A Quiz!")
+                .font(.largeTitle)
+                .padding()
+                .foregroundColor(.black)
+                .background(
+                    RoundedRectangle(cornerRadius: 15)
+                        .style(strokeColor: .black, strokeWidth: 3, fill: LinearGradient(colors: [.blue, .yellow, .red, .orange, .purple, .cyan, .green, .mint, .pink], startPoint: .leading, endPoint: .trailing))
                 )
         }
     }
@@ -73,7 +79,7 @@ struct TriviaGameView: View {
         }
     }
     var shopView: some View {
-        NavigationLink(destination: ShopView()) {
+        NavigationLink(destination: ShopView(viewModel: viewModel)) {
             Text("Shop 🛒")
                 .font(.title3)
                 .padding()
@@ -86,21 +92,21 @@ struct TriviaGameView: View {
     }
     var acronymView: some View {
         NavigationLink(destination: AcronymView()) {
-            Text("Acronym Quiz \(!paidEnabled ? "🔒" : "")")
+            Text("Acronym Quiz \(!viewModel.paid ? "🔒" : "")")
                 .padding()
                 .font(.largeTitle)
                 .foregroundColor(.black)
                 .background(
                     RoundedRectangle(cornerRadius: 15)
-                        .style(strokeColor: .black, strokeWidth: 3, fill: LinearGradient(colors: [.blue, .yellow, .red, .orange, .purple, .cyan, .green, .mint, .pink], startPoint: .leading, endPoint: .trailing))
+                        .style(strokeColor: .black, strokeWidth: 3, fill: .cyan)
                 )
-                .opacity(!paidEnabled ? 0.5 : 1)
-        } .disabled(!paidEnabled)
+                .opacity(!viewModel.paid ? 0.5 : 1)
+        } .disabled(!viewModel.paid)
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MainMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        TriviaGameView()
+        MainMenuView()
     }
 }
