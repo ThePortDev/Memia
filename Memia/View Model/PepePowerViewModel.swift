@@ -14,6 +14,10 @@ class PepePowerViewModel <ResponseType : Collection> : ObservableObject {
     var currentQuestion: Question<[String : String]> {
         quiz.currentQuestion
     }
+	
+	func resetQuiz() {
+		self.quiz = MultipleChoiceQuiz<[String : String]>.pepeModel
+	}
     
     func nextQuestion() {
         quiz.pickNewQuestion()
