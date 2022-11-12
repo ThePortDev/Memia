@@ -62,38 +62,6 @@ struct TwitchView: View {
 				   theme: .defaultTheme,
 				   animation: .classicEffect())
 		})
-		
-		// Fun alerts!
-		// Continue/Answer Alert
-		.alert(alertInfo.title, isPresented: $alertInfo.isShowing) {
-			Button("Continue") {
-				viewModel.nextQuestion()
-				if viewModel.quizComplete() {
-					alertNewGame.title = "You finished the quiz!"
-					alertNewGame.message = "You got \(viewModel.getScore())/\(viewModel.getQuestionsCount() + 1) questions correct!"
-					alertNewGame.isShowing = true
-				}
-			}
-		} message: {
-			Text(alertInfo.message)
-				.foregroundColor(.purple)
-				.shadow(radius: 1)
-				.multilineTextAlignment(.center)
-		}
-		// New Game
-		.alert(alertNewGame.title, isPresented: $alertNewGame.isShowing) {
-			Button("New Game") {
-				viewModel.nextQuestion()
-			}
-			Button("Stop Playing") {
-				alertInfo.title = "Okay. Then Quit."
-				alertInfo.message = "Anytime now."
-				alertInfo.isShowing = true
-				
-			}
-		} message: {
-			Text(alertNewGame.message)
-		}
 	}
 	
 	var imageGuy: some View {
