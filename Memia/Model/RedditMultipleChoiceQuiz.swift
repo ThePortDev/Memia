@@ -50,7 +50,7 @@ extension MultipleChoiceQuiz where ResponseType == [String] {
             answer: "A subreddit that is supposed to be “funny” but mostly just has old or bad jokes that don't make sense or aren’t actually funny.",
             extraResponses: [
                 "A subreddit that is extremely funny and will make you laugh constantly, hahaha!",
-                "A Do you even need another option? Just choose the right answer."
+                "Do you even need another option? Just choose the right answer."
                 
             ]
         ),
